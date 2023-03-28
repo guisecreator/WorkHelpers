@@ -20,12 +20,13 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'taskapp',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'taskapp',
+   
 ]
 
 MIDDLEWARE = [
@@ -63,8 +64,12 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'fortodo', 
+        'USER': 'postgres',
+        'PASSWORD': '123123123',
+        'HOST': '127.0.0.1', 
+        'PORT': '5432',
     }
 }
 
