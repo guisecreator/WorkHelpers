@@ -1,5 +1,5 @@
 # To Do 
 
-Your tasks is completed!
+Your tasks are completed!
 
 
