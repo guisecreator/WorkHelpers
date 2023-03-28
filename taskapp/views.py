@@ -3,4 +3,5 @@ from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("Page Not Found")
+    
+    return render(request, 'taskapp/index.html')
