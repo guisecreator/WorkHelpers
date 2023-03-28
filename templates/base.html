@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" 
+			  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>{% block title %}Foodgram{% endblock %}</title>
+		{% block css %}
+		{% endblock %}
+	</head>
+	<body class="body">
+		<header class="header">
+			<nav class="nav">
+				<div class="nav__container container">
+					{% include "includes/nav.html" %}
+					{% include "registration/includes/nav.html" %}
+				</div>
+			</nav>
+		</header>
+		{% block content %}
+		{% endblock content %}
+		{% include "includes/footer.html" %}
+		{% block javascript %}{% endblock %}
+	</body>
+</html>
