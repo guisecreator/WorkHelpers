@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'taskapp/css/style.css' %}" type="text/css"/>
+  <title>Вход</title>
+</head>
+<body>
+  <center><span class="login100-form-title p-b-70">Welcome</span></center>
+  <span class="login100-form-avatar">
+    <img src="" alt="">
+    </span>
+<center>
+  <div class="login-form"></div>
+  <form action="/accounts/login" method="post">
+    <p>
+    <label for="id_username">Login:</label>
+    <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+  </p>
+  <p>
+    <label for="id_password">Password:</label>
+    <input type="password" name="password" autocomplete="current-password" required="" id="id_password">     
+  </p>
+  {% csrf_token %}
+  <input type="hidden" name="next" value="{{ next }}" />
+    <p><input class="button" type="submit" value="Join"></p>  
+  </form></center>
+</div>
+</body>
+</html> 

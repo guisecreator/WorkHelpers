@@ -3,16 +3,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
-
-
 handler404 = "todo.views.page_not_found"  # noqa
 handler500 = "todo.views.server_error"  # noqa
 handler403 = "todo.views.permission_denied"  # noqa
 
 urlpatterns = [
-    path('', include('taskapp.urls')),
+    path('tasks/', include('taskapp.urls')),
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
+    path('', include('accounts.urls')),
 
 ]
 
