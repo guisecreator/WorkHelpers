@@ -3,37 +3,93 @@ body {
     background-color: #272727
   }
   
-  .button {
+.button {
     font-size: 20px;
-    background-color: #faf9f7;
+    background-color: #272727;
     color: rgb(0, 0, 0);
-    border: 2px solid #000000;
-    border-radius: 4px;
-    width: 150px;
+    border: -2px solid #000000;
+    border-radius: 9px;
+    width: 18%;
     margin: 0 auto;
+    height: 40px;
     display: block;
+    margin-top: 50px;
     }
-    .button:hover {
-    background-color: #ffffff; 
+.button:hover {
+    background-color: #2a2830; 
     color: rgb(0, 0, 0);
     text-decoration: underline;
     }
-    label{
+
+label{
         cursor: pointer;
         display: inline-block;
-        padding: 3px 6px;
+        padding: 13px 6px;
         text-align: right;
-        width: 100px;
+        width: -100px;
         vertical-align: top;
     }
-    input{
-        font-size: inherit;
-        border-top: 30px;
-        height: 30%;
-    }
-    a{
+a{
     color: rgb(136, 136, 136);
     }
-    a:hover{
+a:hover{
     text-decoration: none;
     }
+
+.login100-form-title {
+        font-family: Ubuntu-Bold;
+        font-size: 30px;
+        color: #403866;
+        line-height: 1.2;
+        text-transform: uppercase;
+        text-align: center;
+        width: 100%;
+        border-top: 100px;
+    }
+
+.p-b-51 {
+        padding-bottom: 220px;
+    }
+
+    .input100 {
+        font-family: Ubuntu-Bold;
+        color: #403866;
+        line-height: 1.2;
+        font-size: 18px;
+        display: block;
+        margin: 30px;
+        width: 15%;
+        background: 0 0;
+        height: 40px;
+        padding: 0 20px 0 38px;
+        border-radius: 10px;
+    }
+
+    .limiter {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .container-login100 {
+        width: 100%;
+        min-height: 100vh;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        background-color: #ebebeb;
+    }
+
+
+    .p-t-55 {
+        padding-top: 200px;
+    }
+
+.text23423{
+    font-family: Arial Narrow, sans-serif;
+}

@@ -9,25 +9,23 @@
   <title>Вход</title>
 </head>
 <body>
-  <center><span class="login100-form-title p-b-70">Welcome</span></center>
-  <span class="login100-form-avatar">
-    <img src="" alt="">
-    </span>
 <center>
-  <div class="login-form"></div>
-  <form action="/accounts/login" method="post">
+  <div class="limiter">
+    <div class=" wrap-login100 p-r-85 p-l-85 p-b-55 p-t-55 ">
+  <form action="/"  method="post">
+    <span class="login100-form-title ">Welcome</span>
     <p>
-    <label for="id_username">Login:</label>
-    <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+    <input class="input100" type="text" name="username" placeholder="Login" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
   </p>
   <p>
-    <label for="id_password">Password:</label>
-    <input type="password" name="password" autocomplete="current-password" required="" id="id_password">     
+    <input type="password" class="input100" placeholder="Password" name="password" autocomplete="current-password" required="" id="id_password">     
   </p>
   {% csrf_token %}
   <input type="hidden" name="next" value="{{ next }}" />
-    <p><input class="button" type="submit" value="Join"></p>  
+    <p><input class="button" class="text23423" type="submit" value="Join"></p>  
   </form></center>
+</div>
+</div>
 </div>
 </body>
 </html> 
