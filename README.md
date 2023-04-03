@@ -1,7 +1,5 @@
 # To Do 
 
 Your tasks are completed!
-
-and my
-
-
+___
+this is my first exposure to frontend

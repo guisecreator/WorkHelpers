@@ -93,3 +93,13 @@ a:hover{
 .text23423{
     font-family: Arial Narrow, sans-serif;
 }
+
+
+
+.completed {
+    text-decoration: line-through;
+  }
+
+.sd{
+    text-align: center;
+}
