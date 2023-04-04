@@ -30,7 +30,7 @@ form.addEventListener('submit', (event) => {
 
   list.appendChild(taskItem);
   input.value = ''; 
-});
+  });
 
 completeButton.addEventListener('click', () => {
     taskItem.classList.toggle('completed');

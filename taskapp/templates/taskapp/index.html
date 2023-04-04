@@ -9,6 +9,7 @@
   <title>Initial</title>
 </head>
 <body>
+  {% block content %}
   <center><h1>ToDo List</h1>
   <form class="sd">
     <label for="new-task">New Task:</label>
@@ -24,6 +25,7 @@
       text-decoration: line-through;
     }
   </style></center>
+  {% endblock %}
 </div>
 </body>
 </html> 

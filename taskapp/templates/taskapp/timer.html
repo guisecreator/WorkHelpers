@@ -1,0 +1,20 @@
+{% extends 'taskapp/index.html' %}
+{% block title %}Timer{% endblock %}
+{% block content %}
+{% load static %}
+
+  <center><div id="timer">
+    <p id="minutes">25</p><p>:</p><p id="seconds">00</p>
+  </div>
+  
+  <button id="start">Start</button>
+  <button id="stop">Stop</button></center>
+
+  {% block javascript %}
+  {% load static %}
+
+  <script src="{% static 'taskapp/js/timer.js' %}"></script>
+
+  {% endblock %}
+
+{% endblock %}
