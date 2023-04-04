@@ -8,17 +8,23 @@
   </div>
   
   <label for="minutes-input">Minutes:</label>
-  <input id="minutes-input" type="number" value="25">
+  <input id="minutes-input" class="input100" type="number" value="25">
   
   <button id="start">Start</button>
   <button id="pause">Pause</button>
   <button id="reset">Reset</button>
 </center>
 </form>
+<h1>Секундомер</h1>
+    <div id="timer">0:00:00</div>
+    <button id="startButton" onclick="startTimer()">Старт</button>
+    <button id="pauseButton" onclick="pauseTimer()">Пауза</button>
+    <button id="resetButton" onclick="resetTimer()">Сброс</button>
   {% block javascript %}
   {% load static %}
 
-  <script src="{% static 'taskapp/js/timer.js' %}"></script>
+  <script src="{% static 'taskapp/js/timer.js' %}"></script> 
+  <script src="{% static 'taskapp/js/stopwatch.js' %}"></script>
 
   {% endblock %}
 

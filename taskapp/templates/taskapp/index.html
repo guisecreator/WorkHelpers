@@ -9,11 +9,16 @@
   <title>To Do</title>
 </head>
 <body>
+  <div class="topnav">
+    <a href="{% url 'index' %}">To Do</a>
+    <a href="{% url 'timer' %}">Pomodoro</a>
+     {% csrf_token %} 
+  </div>
   {% block content %}
   <center><h1>ToDo List</h1>
   <form class="sd">
     <label for="new-task">New Task:</label>
-    <input type="text" id="new-task" name="new-task">
+   <center> <input type="text" class="input100" id="new-task" name="new-task"></center>
     <button type="submit">Add Task</button>
   </form>
   <ul id="task-list">
