@@ -2,14 +2,19 @@
 {% block title %}Timer{% endblock %}
 {% block content %}
 {% load static %}
-
-  <center><div id="timer">
-    <p id="minutes">25</p><p>:</p><p id="seconds">00</p>
+<form class="form-timer">
+<center><div id="timer">
+    <p id="time">25:00</p>
   </div>
   
+  <label for="minutes-input">Minutes:</label>
+  <input id="minutes-input" type="number" value="25">
+  
   <button id="start">Start</button>
-  <button id="stop">Stop</button></center>
-
+  <button id="pause">Pause</button>
+  <button id="reset">Reset</button>
+</center>
+</form>
   {% block javascript %}
   {% load static %}
 

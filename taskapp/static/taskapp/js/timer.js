@@ -6,21 +6,28 @@ function startTimer() {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
 
-    document.querySelector("#minutes").textContent = minutes < 10 ? "0" + minutes : minutes;
-    document.querySelector("#seconds").textContent = seconds < 10 ? "0" + seconds : seconds;
+    const timeString = `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
+    document.querySelector("#time").textContent = timeString;
 
     if (time === 0) {
       clearInterval(intervalId);
-    } 
-    else {
+    } else {
       time--;
     }
-}, 1000);
+  }, 1000);
 }
 
-function stopTimer() {
+function pauseTimer() {
   clearInterval(intervalId);
 }
 
+function resetTimer() {
+  clearInterval(intervalId);
+  time = parseInt(document.querySelector("#minutes-input").value) * 60;
+  const timeString = `${document.querySelector("#minutes-input").value}:00`;
+  document.querySelector("#time").textContent = timeString;
+}
+
 document.querySelector("#start").addEventListener("click", startTimer);
-document.querySelector("#stop").addEventListener("click", stopTimer);
+document.querySelector("#pause").addEventListener("click", pauseTimer);
+document.querySelector("#reset").addEventListener("click", resetTimer);
