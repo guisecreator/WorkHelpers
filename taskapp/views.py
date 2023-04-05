@@ -13,3 +13,7 @@ def index_view(request):
 @require_http_methods(["GET"])
 def timer_view(request):
     return render(request, 'taskapp/timer.html')
+
+@login_required
+def complex_tasks(request):
+    return render(request, 'taskapp/complex_tasks.html')

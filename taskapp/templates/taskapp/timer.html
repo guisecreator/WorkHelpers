@@ -2,7 +2,7 @@
 {% block title %}Timer{% endblock %}
 {% block content %}
 {% load static %}
-<form class="form-timer">
+
 <center><div id="timer">
     <p id="time">25:00</p>
   </div>
@@ -13,13 +13,9 @@
   <button id="start">Start</button>
   <button id="pause">Pause</button>
   <button id="reset">Reset</button>
+  <button id="open-timer">Open Timer</button>
 </center>
-</form>
-<h1>Секундомер</h1>
-    <div id="timer">0:00:00</div>
-    <button id="startButton" onclick="startTimer()">Старт</button>
-    <button id="pauseButton" onclick="pauseTimer()">Пауза</button>
-    <button id="resetButton" onclick="resetTimer()">Сброс</button>
+
   {% block javascript %}
   {% load static %}
 
