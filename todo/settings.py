@@ -4,10 +4,6 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-
-
-
 SECRET_KEY = 'django-insecure-ly^z!lj*(#5-(450665_asu4f$=0)86)$1#s6vy0ufngn%mp0*'
 
 
@@ -21,7 +17,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'taskapp',
-    'accounts',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -74,7 +69,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 
 
 

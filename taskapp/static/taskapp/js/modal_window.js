@@ -1,4 +1,3 @@
-
 function openModal() {
   
     var modal = document.createElement('div');

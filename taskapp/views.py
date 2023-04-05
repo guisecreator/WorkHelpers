@@ -9,6 +9,7 @@ from django.views.decorators.http import require_http_methods
 def index_view(request):
     return render(request, 'taskapp/index.html')
 
+
 @login_required
 @require_http_methods(["GET"])
 def timer_view(request):
