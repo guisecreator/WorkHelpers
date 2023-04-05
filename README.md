@@ -1,6 +1,4 @@
 # To Do app
 ___
 
-py & js
-
-~~this is my first exposure to frontend~~
+Tools that include Todo, pomodoro timer and more for your work and concentration
