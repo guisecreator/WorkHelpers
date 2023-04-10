@@ -53,3 +53,32 @@ class Tasks(models.Model):
 
     def __str__(self):
         return f"{self.title} - {self.username}"
+    
+class Task(models.Model):
+
+    description = models.TextField(verbose_name="description")
+
+    username = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        db_column="author",
+        verbose_name="автор",
+    )
+
+    time_create = models.DateTimeField(
+       auto_now_add=True, 
+       verbose_name='Time add in time_create',
+       )
+   
+    time_update = models.DateTimeField(
+       auto_now=True, 
+       verbose_name='Time update in time_create',
+       )
+
+    completed = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = "Tasks"
+
+    def __str__(self):
+        return self.title

@@ -48,22 +48,51 @@ function addTask() {
     description: taskDescription,
     completed: false
   };
-  tasks.push(task);
-  saveTasks();
-  const taskElement = createTaskElement(task);
-  taskList.appendChild(taskElement);
+  fetch('/api/tasks/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(task),
+  })
+  .then(response => response.json())
+  .then(data => {
+    tasks.push(data);
+    renderTasks();
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
   document.querySelector("#task-input").value = "";
 }
 
 function saveTasks() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+  fetch('/api/tasks/', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(tasks),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 }
 
 function loadTasks() {
-  const storedTasks = localStorage.getItem("tasks");
-  if (storedTasks) {
-    tasks = JSON.parse(storedTasks);
-  }
+  fetch('/api/tasks/')
+  .then(response => response.json())
+  .then(data => {
+    tasks = data;
+    renderTasks();
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 }
 
 let tasks = [];
