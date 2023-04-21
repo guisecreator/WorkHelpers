@@ -1,8 +1,14 @@
 import os
 from pathlib import Path
 
+# from dotenv import load_dotenv
+
+
+# load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+PROJECT_DIR = BASE_DIR.parent
 
 SECRET_KEY = 'django-insecure-ly^z!lj*(#5-(450665_asu4f$=0)86)$1#s6vy0ufngn%mp0*'
 
@@ -41,7 +47,9 @@ ROOT_URLCONF = 'todo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ 
+            PROJECT_DIR.joinpath('frontend/templates')
+    ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -100,16 +108,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'files', 'media')
 
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'files', 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'files', 'static')
 
 
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
+# STATICFILES_FINDERS = (
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#     'django.contrib.staticfiles.finders.DefaultStorageFinder',
+# )
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend/static'),
+]
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
