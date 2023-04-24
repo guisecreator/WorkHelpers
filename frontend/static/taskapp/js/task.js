@@ -34,7 +34,7 @@ function createTaskElement(task) {
   return li;
 }
 
-function renderTasks() {
+function renderTasks(tasks) {
   taskList.innerHTML = "";
   tasks.forEach(task => {
     const taskElement = createTaskElement(task);
@@ -48,55 +48,61 @@ function addTask() {
     description: taskDescription,
     completed: false
   };
+
+  // Отправка POST-запроса на сервер Django
   fetch('/api/tasks/', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify(task),
+    headers: {
+      "Content-Type": "application/json"
+    }
   })
   .then(response => response.json())
-  .then(data => {
-    tasks.push(data);
-    renderTasks();
+  .then(newTask => {
+    tasks.push(newTask);
+    renderTasks(tasks);
+    document.querySelector("#task-input").value = "";
   })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-  document.querySelector("#task-input").value = "";
+  .catch(error => console.error(error));
 }
 
-function saveTasks() {
-  fetch('/api/tasks/', {
+function updateTask(task) {
+  // Отправка PUT-запроса на сервер Django
+  fetch('/api/tasks/${task.id}/', {
     method: 'PUT',
+    body: JSON.stringify(task),
     headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(tasks),
+      "Content-Type": "application/json"
+    }
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
+  .catch(error => console.error(error));
+}
+
+function deleteTask(task) {
+  // Отправка DELETE-запроса на сервер Django
+  fetch('/api/tasks/${task.id}/', {
+    method: "DELETE"
   })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+  .then(() => {
+    const index = tasks.indexOf(task);
+    tasks.splice(index, 1);
+    renderTasks(tasks);
+  })
+  .catch(error => console.error(error));
 }
 
 function loadTasks() {
+  // Загрузка списка задач с сервера Django
   fetch('/api/tasks/')
   .then(response => response.json())
   .then(data => {
     tasks = data;
-    renderTasks();
+    renderTasks(tasks);
   })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+  .catch(error => console.error(error));
 }
 
 let tasks = [];
 loadTasks();
-renderTasks();
 
 document.querySelector("#add-task").addEventListener("click", addTask);

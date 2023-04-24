@@ -8,7 +8,7 @@ from django.views.decorators.http import require_http_methods
 def index_view(request):
     return render(
         request, 
-        'frontend/templates/taskapp/index.html')
+        'taskapp/index.html')
 
 
 @login_required
@@ -16,5 +16,5 @@ def index_view(request):
 def timer_view(request):
     return render(
         request, 
-        'frontend/templates/taskapp/timer.html')
+        'taskapp/timer.html')
 

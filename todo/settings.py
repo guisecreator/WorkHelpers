@@ -29,8 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
    
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -40,9 +42,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
+
 ROOT_URLCONF = 'todo.urls'
+
 
 TEMPLATES = [
     {
@@ -62,9 +68,8 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'todo.wsgi.application'
-
-
 
 
 DATABASES = {
@@ -77,7 +82,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -131,3 +135,5 @@ LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
 
 LOGOUT_URL = 'logout'
+
+CORS_ORIGIN_ALLOW_ALL = True
