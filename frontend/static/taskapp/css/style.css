@@ -18,7 +18,6 @@ body {
 .button:hover {
     background-color: #2a2830; 
     color: rgb(0, 0, 0);
-    text-decoration: underline;
     }
 
 label{
